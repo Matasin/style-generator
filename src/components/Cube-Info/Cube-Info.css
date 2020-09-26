@@ -1,0 +1,21 @@
+.Cube-Info {
+    width: 350px;
+    height: 350px;
+    margin: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    /* transition: all 100ms ease; */
+}
+.Cube-Info p {
+    font-size: 0.80em;
+    padding: 2em;
+    margin: 1em;
+    border: 1px solid black;
+    box-shadow: inset 1px 1px 7px 0px rgba(0,0,0,0.45);
+    border-radius: 10px;
+    background-color: white;
+}

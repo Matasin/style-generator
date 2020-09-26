@@ -1,0 +1,7 @@
+.Area {
+    width: 1000px;
+    margin: 3em auto;
+}
+.Area__Content {
+    padding: 2em;
+}

@@ -1,0 +1,22 @@
+.Navbar {
+    background-color: #5A8AB9;
+
+    display: flex;
+    justify-content: space-evenly;
+
+    margin: 0;
+    padding: 1em;
+}
+.Navbar__Item {
+    color: black;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 1.1em;
+
+    padding: 0 1em;
+
+    transition: all 100ms linear;
+}
+.Navbar__Item:hover {
+    color: white;
+}
