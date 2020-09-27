@@ -1,15 +1,59 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  font-size: 100%;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  
+    font-size: 100%;
 }
-
+  
 .Box-Shadow-Container,
 .Border-Radius-Container {
-  display: flex;
+    display: flex;
 }
+  
+/* Dobuled styles for slider input and color input */
+.Input-Slider-Container,
+.Input-Color-Container {
+    margin: 0.5em;
+    width: 250px;
+    color: #626262;
+}
+.Input-Slider__Info,
+.Input-Color__Info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.Input-Slider__Info p {
+    margin-left: 10px;
+}
+.Input-Slider__Info--Right input,
+.Input-Color--Right input {
+    width: 2em;
+    max-height: 20px;
+    color: gray;
+}
+.Input-Slider__Info--Right span {
+    margin: 0 5px;
+    font-size: 0.8em;
+}
+.Input-Slider-Container .Slider-Range {
+    width: 100%;
+    cursor: pointer;
+}
+  
+/* styles required for color input */
+.Input-Color--Right div {
+    margin: 0 5px;
+}
+.Input-Color--Right {
+    display: flex;
+}
+.Input-Color--Right input {
+    width: 4em;
+}
+  
+  

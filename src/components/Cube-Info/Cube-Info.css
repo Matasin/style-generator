@@ -1,17 +1,21 @@
+.Cube-Info-Container {
+    width: 100%;
+    display: flex;
+    /* margin: auto 2em; */
+}
 .Cube-Info {
-    width: 350px;
-    height: 350px;
+    width: 400px;
+    height: 400px;
     margin: auto;
+    margin-left: 200px;
 
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-
-    /* transition: all 100ms ease; */
 }
 .Cube-Info p {
-    font-size: 0.80em;
+    font-size: 0.75em;
     padding: 2em;
     margin: 1em;
     border: 1px solid black;

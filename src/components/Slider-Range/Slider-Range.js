@@ -1,25 +1,27 @@
 import React from 'react';
-import './Slider-Range.css'
 
-const SliderRange = ({ text, value, setValue, scope }) => {
+const SliderRange = ({ text, value, setValue, hidePX, minPX, maxPX, opacity }) => {
     return (
-        <div className='Slider-Range'>
-            <div className='Slider-Range__Info'>
+        <div className='Input-Slider-Container'>
+            <div className='Input-Slider__Info'>
                 <p>{text}</p>
-                <input
-                    type='text'
-                    value={scope ? value : `${value}px`}
-                    onChange={setValue}
-                />
+                <div className='Input-Slider__Info--Right'>
+                    <input
+                        type='text'
+                        value={value}
+                        onChange={setValue}
+                    />
+                    {hidePX ? null : <span>px</span>}
+                </div>
             </div>
             <input
                 type='range'
-                min={scope ? 0 : -200}
-                step={scope && 0.01}
-                max={scope ? 1 : 200}
+                min={minPX ? minPX : -200}
+                max={maxPX ? maxPX : 200}
+                step={opacity && 0.01}
                 value={value}
                 onChange={setValue}
-                className='Slider-Range__Slider'
+                className='Slider-Range'
             />
         </div>
     )

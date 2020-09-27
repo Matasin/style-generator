@@ -3,21 +3,22 @@ import React, { useState } from 'react';
 import '../../components/Slider-Range/Slider-Range'
 import CubeInfo from '../../components/Cube-Info/Cube-Info'
 import SliderRange from '../../components/Slider-Range/Slider-Range';
+import SetColor from '../../components/Set-Color/Set-Color'
 
 const BoxShadow = () => {
     const [boxShadow, setBoxShadow] = useState({
         HorizontalLength: 10,
         VerticalLength: 10,
         BlurRadius: 5,
-        SpreadRadius: 10,
+        SpreadRadius: 0,
 
         ShadowColor: '#000000',
-        BackgroundColor: '255, 255, 255',
-        BoxColor: '#e7a61a',
+        BackgroundColor: '#ffffff',
 
+        BoxColor: '#E7A61A',
         Opacity: 0.75,
     });
-    const { HorizontalLength, VerticalLength, BlurRadius, SpreadRadius, Opacity } = boxShadow;
+    const { HorizontalLength, VerticalLength, BlurRadius, SpreadRadius, Opacity, ShadowColor, BackgroundColor, BoxColor, } = boxShadow;
 
     return (
         <div className='Box-Shadow-Container'>
@@ -35,6 +36,8 @@ const BoxShadow = () => {
                 <SliderRange
                     text='Blur Radius'
                     value={BlurRadius}
+                    minPX={'0'}
+                    maxPX={300}
                     setValue={(e) => setBoxShadow({ ...boxShadow, BlurRadius: e.target.value })}
                 />
                 <SliderRange
@@ -42,10 +45,32 @@ const BoxShadow = () => {
                     value={SpreadRadius}
                     setValue={(e) => setBoxShadow({ ...boxShadow, SpreadRadius: e.target.value })}
                 />
+                <hr />
+
+                <SetColor
+                    text='Shadow Color'
+                    value={ShadowColor}
+                    setValue={(e) => setBoxShadow({ ...boxShadow, ShadowColor: e.target.value })}
+                />
+                <SetColor
+                    text='Background Color'
+                    value={BackgroundColor}
+                    setValue={(e) => setBoxShadow({ ...boxShadow, BackgroundColor: e.target.value })}
+                />
+                <SetColor
+                    text='Box Color'
+                    value={BoxColor}
+                    setValue={(e) => setBoxShadow({ ...boxShadow, BoxColor: e.target.value })}
+                />
+
+                <hr />
                 <SliderRange
                     text='Opacity'
                     value={Opacity}
-                    scope={true}
+                    minPX={'0'}
+                    maxPX={1}
+                    opacity={true}
+                    hidePX={true}
                     setValue={(e) => setBoxShadow({ ...boxShadow, Opacity: e.target.value })}
                 />
             </div>
