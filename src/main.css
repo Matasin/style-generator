@@ -55,5 +55,10 @@ body {
 .Input-Color--Right input {
     width: 4em;
 }
+.Input-Color--Right input[type=color] {
+    width: 2.5em;
+    margin: 0 5px;
+    padding: 0;
+}
   
   

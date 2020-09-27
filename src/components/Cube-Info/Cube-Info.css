@@ -12,10 +12,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    position: relative;
 }
 .Cube-Info p {
-    font-size: 0.75em;
+    position: absolute;
+    top: 20%;
+    font-size: 0.7em;
     padding: 2em;
     margin: 1em;
     border: 1px solid black;

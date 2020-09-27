@@ -6,7 +6,11 @@ const SetColor = ({ text, value, setValue }) => {
             <div className='Input-Color__Info'>
                 <p>{text}</p>
                 <div className='Input-Color--Right'>
-                    <div>123</div>
+                    <input
+                        type="color"
+                        value={value}
+                        onChange={setValue}
+                    />
                     <input
                         type='text'
                         value={value}
