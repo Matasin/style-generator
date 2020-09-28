@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import '../../components/Slider-Range/Slider-Range'
-import CubeInfo from '../../components/Cube-Info/Cube-Info'
+import CubeInfoForShadow from '../../components/Cube-Info-For-Shadow/Cube-Info-For-Shadow'
 import SliderRange from '../../components/Slider-Range/Slider-Range';
 import SetColor from '../../components/Set-Color/Set-Color'
 
@@ -17,8 +17,10 @@ const BoxShadow = () => {
 
         BoxColor: '#E7A61A',
         Opacity: 0.75,
+
+        Inset: false,
     });
-    const { HorizontalLength, VerticalLength, BlurRadius, SpreadRadius, Opacity, ShadowColor, BackgroundColor, BoxColor, } = boxShadow;
+    const { HorizontalLength, VerticalLength, BlurRadius, SpreadRadius, Opacity, ShadowColor, BackgroundColor, BoxColor, Inset } = boxShadow;
 
     return (
         <div className='Box-Shadow-Container'>
@@ -73,9 +75,19 @@ const BoxShadow = () => {
                     hidePX={true}
                     setValue={(e) => setBoxShadow({ ...boxShadow, Opacity: e.target.value })}
                 />
+
+                <label>Outline</label>
+                <label className="switch">
+                    <input type="checkbox" />
+                    <span
+                        className="slider round"
+                        onClick={() => setBoxShadow({ ...boxShadow, Inset: !Inset })}
+                    ></span>
+                </label>
+                <label>Inset</label>
             </div>
 
-            <CubeInfo
+            <CubeInfoForShadow
                 style={boxShadow}
             />
         </div>

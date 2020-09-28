@@ -1,8 +1,7 @@
 import React from 'react';
-import './Cube-Info.css'
 
-const CubeInfo = ({ style }) => {
-    const { HorizontalLength, VerticalLength, BlurRadius, SpreadRadius, ShadowColor, BackgroundColor, BoxColor, Opacity } = style;
+const CubeInfoForShadow = ({ style }) => {
+    const { HorizontalLength, VerticalLength, BlurRadius, SpreadRadius, ShadowColor, BackgroundColor, BoxColor, Opacity, Inset } = style;
     
     const hexToRgbA = (hex) => {
         var c;
@@ -18,9 +17,9 @@ const CubeInfo = ({ style }) => {
     }
     const ShadowColorRGB = hexToRgbA(ShadowColor).replace('rgba(','').replace(')','');
 
-    const info1 = `-webkit-box-shadow: ${HorizontalLength}px ${VerticalLength}px ${BlurRadius}px ${SpreadRadius}px rgba(${ShadowColorRGB},${Opacity})`;
-    const info2 = `-moz-box-shadow:  ${HorizontalLength}px ${VerticalLength}px ${BlurRadius}px ${SpreadRadius}px rgba(${ShadowColorRGB},${Opacity})`;
-    const info3 = `box-shadow: ${HorizontalLength}px ${VerticalLength}px ${BlurRadius}px ${SpreadRadius}px rgba(${ShadowColorRGB},${Opacity})`;
+    const info1 = `-webkit-box-shadow: ${Inset ? 'inset' : ''} ${HorizontalLength}px ${VerticalLength}px ${BlurRadius}px ${SpreadRadius}px rgba(${ShadowColorRGB},${Opacity});`;
+    const info2 = `-moz-box-shadow: ${Inset ? 'inset' : ''} ${HorizontalLength}px ${VerticalLength}px ${BlurRadius}px ${SpreadRadius}px rgba(${ShadowColorRGB},${Opacity});`;
+    const info3 = `box-shadow: ${Inset ? 'inset' : ''} ${HorizontalLength}px ${VerticalLength}px ${BlurRadius}px ${SpreadRadius}px rgba(${ShadowColorRGB},${Opacity});`;
 
     return (
         <div className='Cube-Info-Container'
@@ -29,7 +28,7 @@ const CubeInfo = ({ style }) => {
             <div
                 className='Cube-Info'
                 style={{
-                    boxShadow: `${HorizontalLength}px ${VerticalLength}px ${BlurRadius}px ${SpreadRadius}px rgba(${ShadowColorRGB},${Opacity})`,
+                    boxShadow: `${Inset ? 'inset' : ''} ${HorizontalLength}px ${VerticalLength}px ${BlurRadius}px ${SpreadRadius}px rgba(${ShadowColorRGB},${Opacity})`,
                     backgroundColor: `${BoxColor}`
                 }}
             >
@@ -44,4 +43,4 @@ const CubeInfo = ({ style }) => {
         </div>
     )
 };
-export default CubeInfo
+export default CubeInfoForShadow
